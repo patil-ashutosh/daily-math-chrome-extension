@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Math</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="header">
+      <div class="brand">
+        <img class="logo" src="icons/icon48.png" alt="Daily Math logo" />
+        <div>
+        <p class="eyebrow">2-minute mental workout</p>
+        <h1>Daily Math</h1>
+        </div>
+      </div>
+      <div class="streak" title="Current streak">
+        <span>🔥</span>
+        <strong id="streakCount">0</strong>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span id="difficultyBadge">Easy</span>
+      <span id="dayLabel">Today</span>
+    </div>
+
+    <section class="challenge">
+      <p class="label">Today's challenge</p>
+      <div id="question" class="question">Loading…</div>
+
+      <form id="answerForm">
+        <input
+          id="answerInput"
+          type="number"
+          step="any"
+          inputmode="decimal"
+          placeholder="Your answer"
+          autocomplete="off"
+          required
+        />
+        <button id="checkButton" type="submit">Check answer</button>
+      </form>
+
+      <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+      <div id="explanation" class="explanation hidden"></div>
+    </section>
+
+    <footer>
+      <span id="progressText">Solve today's challenge to continue your streak.</span>
+    </footer>
+  </main>
+
+  <script src="question-generator.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
